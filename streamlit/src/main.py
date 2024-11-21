@@ -30,7 +30,7 @@ with transcript_col:
             audio = get_audio_file(audio_source=audio_source, source_type=source_type)
             st.session_state.audio = audio
             st.session_state.audio_play_time = 0
-            st.experimental_rerun()
+            st.rerun()
 
 # Display audio
 if 'audio' in st.session_state:
@@ -136,7 +136,7 @@ with transcript_col:
                     )
                     if play_button:
                         st.session_state.audio_play_time = int(segment['start'])
-                        st.experimental_rerun()
+                        st.rerun()
 
                 with text_col:
                     st.write('%s' % segment['text'])
